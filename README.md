@@ -1,7 +1,6 @@
 # Bus Ticket Booking System 🚌🎫
 
-![System Architecture Diagram](docs/system-architecture.png)  
-*Figure 1: High-level system architecture*
+
 ## Creators 
 
 Tursynkhan Alikhan, 2nd year student(KBTU)

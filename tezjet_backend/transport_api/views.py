@@ -22,14 +22,14 @@ from .serializers import (
 ) 
 from rest_framework.permissions import AllowAny
 
-@api_view(['POST'])  # FBV (1/2) 
+@api_view(['POST'])  
 @permission_classes([AllowAny])
 def register_user(request):
     if request.method == 'POST':
         serializer = UserRegistrationSerializer(data=request.data)
         if serializer.is_valid():
             user = serializer.save()
-            token, created = Token.objects.get_or_create(user=user)  # For token auth
+            token, created = Token.objects.get_or_create(user=user)  
             return Response({
                 'token': token.key,
                 'user': {
@@ -59,11 +59,11 @@ def user_login(request):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def user_logout(request): 
-    request.user.auth_token.delete()  # Delete the token
-    logout(request)  # Django session logout (if using sessions)
+    request.user.auth_token.delete()  
+    logout(request)  
     return Response({'message': 'Successfully logged out.'}, status=status.HTTP_200_OK)
 
-class StationList(APIView):  # CBV (1/2)
+class StationList(APIView):  
     def get(self, request):
         stations = Station.objects.all()
         serializer = StationSerializer(stations, many=True)
@@ -77,7 +77,7 @@ class StationList(APIView):  # CBV (1/2)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-class JourneyList(APIView):  # CBV (2/2)
+class JourneyList(APIView):  
     def get(self, request):
         departure_station = request.query_params.get('departure_station')
         arrival_station = request.query_params.get('arrival_station')
@@ -106,14 +106,12 @@ class JourneyList(APIView):  # CBV (2/2)
         except Journey.DoesNotExist:
             raise Http404
 
-    def get(self, request, pk=None):  # Modified to accept optional pk
+    def get(self, request, pk=None):  
         if pk is not None:
-            # Handle single journey request
             journey = self.get_object(pk)
             serializer = JourneySerializer(journey)
             return Response(serializer.data)
         else:
-            # Handle list request (your existing code)
             departure_station = request.query_params.get('departure_station')
             arrival_station = request.query_params.get('arrival_station')
             date = request.query_params.get('date')
@@ -130,7 +128,7 @@ class JourneyList(APIView):  # CBV (2/2)
             serializer = JourneySerializer(journeys, many=True)
             return Response(serializer.data)
 
-class JourneyCreateList(APIView):  # CBV (2/2)
+class JourneyCreateList(APIView):  
     
     def post(self, request):
         serializer = JourneyCreateSerializer(data=request.data)
@@ -140,7 +138,7 @@ class JourneyCreateList(APIView):  # CBV (2/2)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) 
     
 
-class BookingView(APIView):  # CRUD operations for Booking model
+class BookingView(APIView):  
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
