@@ -1,0 +1,234 @@
+/* Journey search container */
+.journey-search-container {
+    padding: 40px 20px;
+    background-color: #f5f7fa; /* Light background to match home page */
+    min-height: 100vh; /* Ensure full viewport height */
+  }
+  
+  /* Heading */
+  .journey-search-container h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  .journey-search-container h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  
+  /* Search form */
+  form {
+    background-color: white; /* White background for the form */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-bottom: 30px;
+  }
+  
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between form elements */
+  }
+  
+  .form-group {
+    margin-bottom: 0; /* Remove default margin to use gap instead */
+  }
+  
+  .form-group label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .form-control {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.3s ease;
+  }
+  
+  .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* Subtle glow on focus */
+    outline: none;
+  }
+  
+  select.form-control {
+    appearance: none; /* Remove default dropdown arrow */
+    background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") no-repeat right 10px center;
+    background-size: 16px; /* Custom dropdown arrow */
+  }
+  
+  input[type="date"].form-control::-webkit-calendar-picker-indicator {
+    filter: invert(0.5); /* Style the date picker icon */
+  }
+  
+  /* Search button */
+  .btn-primary {
+    background: linear-gradient(135deg, #007bff 0%, #00c4ff 100%); /* Gradient to match navbar */
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    width: 100%; /* Full width on smaller screens */
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #0056b3 0%, #0096cc 100%); /* Darker gradient on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Loading spinner */
+  .text-center.mt-4 {
+    margin-top: 40px;
+  }
+  
+  .spinner-border {
+    color: #007bff; /* Match primary color */
+  }
+  
+  /* Journey list */
+  .list-group {
+    max-width: 900px; /* Limit width for better readability */
+    margin: 0 auto;
+  }
+  
+  .journey-item {
+    background-color: white;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .journey-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .journey-item h5 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .journey-item p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .journey-item small {
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  .text-primary {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ff6f61 !important; /* Coral color to match theme */
+  }
+  
+  /* Book Now button */
+  .btn-success {
+    background-color: #ff6f61; /* Coral color */
+    border-color: #ff6f61;
+    padding: 8px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-success:hover {
+    background-color: #ff4f3f; /* Darker coral on hover */
+    border-color: #ff4f3f;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .journey-search-container h2 {
+      font-size: 2rem;
+    }
+  
+    .journey-search-container h3 {
+      font-size: 1.5rem;
+    }
+  
+    .form-row {
+      flex-direction: column;
+      gap: 20px; /* Stack form elements vertically with spacing */
+    }
+  
+    .form-group {
+      width: 100%; /* Full width on smaller screens */
+    }
+  
+    .form-group.col-md-2.d-flex.align-items-end {
+      align-items: stretch; /* Ensure button stretches */
+    }
+  
+    .journey-item h5 {
+      font-size: 1.2rem;
+    }
+  
+    .journey-item p {
+      font-size: 0.95rem;
+    }
+  
+    .journey-item small {
+      font-size: 0.85rem;
+    }
+  
+    .text-primary {
+      font-size: 1.3rem;
+    }
+  
+    .btn-success {
+      padding: 6px 15px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .journey-search-container {
+      padding: 30px 15px;
+    }
+  
+    .journey-search-container h2 {
+      font-size: 1.8rem;
+    }
+  
+    .journey-search-container h3 {
+      font-size: 1.3rem;
+    }
+  
+    .form-control {
+      font-size: 0.9rem;
+      padding: 8px;
+    }
+  
+    .btn-primary {
+      font-size: 1rem;
+      padding: 10px 20px;
+    }
+  }

@@ -1,0 +1,178 @@
+/* Booking list container */
+.booking-list-container {
+    padding: 40px 20px;
+    background-color: #f5f7fa; /* Light background to match other pages */
+    min-height: 100vh; /* Ensure full viewport height */
+  }
+  
+  /* Heading */
+  .booking-list-container h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  /* Loading spinner */
+  .text-center {
+    margin-top: 40px;
+  }
+  
+  .spinner-border {
+    color: #007bff; /* Match primary blue color */
+  }
+  
+  /* No bookings message */
+  .alert-info {
+    max-width: 600px;
+    margin: 40px auto;
+    border-radius: 12px;
+    background-color: #e7f3ff; /* Light blue background */
+    color: #333;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Booking list */
+  .list-group {
+    max-width: 900px; /* Limit width for better readability */
+    margin: 0 auto;
+  }
+  
+  .list-group-item.booking-item {
+    background-color: white;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  .list-group-item.booking-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Booking item heading */
+  .list-group-item h5 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Booking details */
+  .list-group-item p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .list-group-item small {
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  /* Price */
+  .text-primary {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ff6f61 !important; /* Coral color to match theme */
+  }
+  
+  /* Cancel button */
+  .btn-danger {
+    background-color: #ff6f61; /* Coral color instead of default red */
+    border-color: #ff6f61;
+    padding: 8px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-danger:hover {
+    background-color: #ff4f3f; /* Darker coral on hover */
+    border-color: #ff4f3f;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn-danger:disabled {
+    background-color: #cccccc;
+    border-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .booking-list-container h2 {
+      font-size: 2rem;
+    }
+  
+    .list-group-item h5 {
+      font-size: 1.2rem;
+    }
+  
+    .list-group-item p {
+      font-size: 0.95rem;
+    }
+  
+    .list-group-item small {
+      font-size: 0.85rem;
+    }
+  
+    .text-primary {
+      font-size: 1.3rem;
+    }
+  
+    .btn-danger {
+      padding: 6px 15px;
+      font-size: 0.9rem;
+    }
+  
+    .alert-info {
+      font-size: 1rem;
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .booking-list-container {
+      padding: 30px 15px;
+    }
+  
+    .booking-list-container h2 {
+      font-size: 1.8rem;
+    }
+  
+    .list-group-item {
+      padding: 15px;
+    }
+  
+    .list-group-item h5 {
+      font-size: 1.1rem;
+    }
+  
+    .list-group-item p {
+      font-size: 0.9rem;
+    }
+  
+    .list-group-item small {
+      font-size: 0.8rem;
+    }
+  
+    .text-primary {
+      font-size: 1.2rem;
+    }
+  
+    .btn-danger {
+      padding: 5px 12px;
+      font-size: 0.85rem;
+    }
+  }

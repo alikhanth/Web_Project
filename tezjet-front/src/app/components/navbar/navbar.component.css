@@ -1,0 +1,131 @@
+/* Navbar styling */
+.navbar {
+  background: linear-gradient(135deg, #007bff 0%, #00c4ff 100%); /* Match jumbotron gradient */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 15px 0; /* Adjust padding for a slimmer navbar */
+  position: sticky; /* Keep navbar fixed at the top */
+  top: 0;
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+/* Navbar brand */
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white !important; /* Ensure white color */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #ff6f61 !important; /* Coral color on hover */
+}
+
+/* Navbar links */
+.nav-link {
+  color: white !important;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 10px 15px !important;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ff6f61 !important; /* Coral color on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+  display: inline-block; /* Needed for transform */
+}
+
+/* Active link */
+.nav-link.active {
+  color: #ff6f61 !important; /* Coral color for active link */
+  font-weight: 600;
+  border-bottom: 2px solid #ff6f61; /* Underline effect for active link */
+}
+
+/* Navbar toggler (hamburger menu) */
+.navbar-toggler {
+  border: none; /* Remove default border */
+  padding: 8px;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  /* Custom white toggler icon */
+}
+
+.navbar-toggler:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Subtle glow on focus */
+}
+
+/* Dropdown menu */
+.dropdown-toggle::after {
+  border-color: white; /* White caret for dropdown */
+}
+
+.dropdown-menu {
+  background-color: #fff; /* White background for dropdown */
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-top: 10px;
+}
+
+.dropdown-item {
+  color: #333;
+  font-size: 1rem;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f5f7fa; /* Light background on hover */
+  color: #ff6f61; /* Coral text on hover */
+}
+
+/* Adjust spacing for navbar items */
+.navbar-nav .nav-item {
+  margin: 0 5px; /* Space between nav items */
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: #007bff; /* Solid blue background for mobile menu */
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+  .nav-link {
+    padding: 10px !important;
+    font-size: 1rem;
+  }
+
+  .dropdown-menu {
+    background-color: transparent; /* Transparent background in mobile view */
+    box-shadow: none;
+  }
+
+  .dropdown-item {
+    color: white;
+    padding: 10px 15px;
+  }
+
+  .dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle hover effect in mobile view */
+    color: #ff6f61;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+  }
+}

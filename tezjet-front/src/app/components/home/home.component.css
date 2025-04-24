@@ -1,0 +1,148 @@
+/* General container styling */
+.home-container {
+    padding: 40px 20px;
+    background-color: #f5f7fa; /* Light background for a clean look */
+    min-height: 100vh; /* Ensure it takes full viewport height */
+  }
+  .jumbotron {
+    background: linear-gradient(rgba(0, 123, 255, 0.8), rgba(0, 196, 255, 0.8)), 
+                url('https://www.shutterstock.com/image-vector/big-intercity-bus-traveling-on-600nw-2352032303.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    padding: 50px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  /* Jumbotron styling */
+  
+  
+  .jumbotron h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+  }
+  
+  .jumbotron .lead {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+  
+  .jumbotron hr {
+    border-top: 2px solid rgba(255, 255, 255, 0.8);
+    width: 80px;
+    margin: 20px auto;
+  }
+  
+  .jumbotron p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+  
+  .jumbotron .btn-primary {
+    background-color: #ff6f61; /* Coral color for the button */
+    border-color: #ff6f61;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+  }
+  
+  .jumbotron .btn-primary:hover {
+    background-color: #ff4f3f;
+    border-color: #ff4f3f;
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Cards section */
+  .row.mt-4 {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between cards */
+  }
+  
+  .card {
+    border: none; /* Remove default border */
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: all 0.3s ease;
+    background-color: white;
+    overflow: hidden; /* Ensure content stays within rounded corners */
+  }
+  
+  .card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-body {
+    padding: 25px;
+    text-align: center;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .jumbotron {
+      padding: 30px 20px;
+    }
+  
+    .jumbotron h1 {
+      font-size: 2.2rem;
+    }
+  
+    .jumbotron .lead {
+      font-size: 1.2rem;
+    }
+  
+    .jumbotron .btn-primary {
+      font-size: 1rem;
+      padding: 10px 25px;
+    }
+  
+    .row.mt-4 {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .jumbotron h1 {
+      font-size: 1.8rem;
+    }
+  
+    .jumbotron .lead {
+      font-size: 1rem;
+    }
+  
+    .card-title {
+      font-size: 1.3rem;
+    }
+  
+    .card-text {
+      font-size: 0.9rem;
+    }
+  }

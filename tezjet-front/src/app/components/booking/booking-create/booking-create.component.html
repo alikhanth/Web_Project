@@ -1,0 +1,36 @@
+<div class="booking-create-container" *ngIf="journey">
+    <h2>Create Booking</h2>
+    <div class="journey-details mb-4">
+      <h4>{{ journey.departure_station.name }} to {{ journey.arrival_station.name }}</h4>
+      <p><strong>Departure:</strong> {{ journey.departure_time | date:'medium' }}</p>
+      <p><strong>Arrival:</strong> {{ journey.arrival_time | date:'medium' }}</p>
+      <p><strong>Bus Number:</strong> {{ journey.bus_number }}</p>
+      <p><strong>Price per seat:</strong> {{ journey.price | currency }}</p>
+      <p><strong>Available seats:</strong> {{ journey.available_seats }}</p>
+    </div>
+  
+    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="passenger_name">Passenger Name</label>
+        <input type="text" id="passenger_name" formControlName="passenger_name" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="passenger_email">Passenger Email</label>
+        <input type="email" id="passenger_email" formControlName="passenger_email" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="seats">Number of Seats</label>
+        <input type="number" id="seats" formControlName="seats" class="form-control" min="1" [max]="journey.available_seats">
+      </div>
+      <div class="form-group">
+        <h4>Total Price: {{ totalPrice | currency }}</h4>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!bookingForm.valid || isLoading">
+        <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        Confirm Booking
+      </button>
+      <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+        {{ errorMessage }}
+      </div>
+    </form>
+  </div>
